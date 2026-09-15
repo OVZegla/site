@@ -82,7 +82,7 @@ export default async function PrinterPage({ params }: PageProps) {
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
                 {printer.range}
               </p>
-              <h1 className="mt-3 text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
+              <h1 className="mt-3 text-balance font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
                 {printer.name}
               </h1>
               <p className="mt-4 text-xl text-white/90">{printer.tagline}</p>
@@ -97,7 +97,7 @@ export default async function PrinterPage({ params }: PageProps) {
                 </Button>
                 <a
                   href={`tel:${siteConfig.phoneHref}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/10"
+                  className="inline-flex items-center gap-2 rounded-none border border-white/25 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/10"
                 >
                   <HeadsetIcon className="size-5" />
                   Parler à un technicien
@@ -109,7 +109,7 @@ export default async function PrinterPage({ params }: PageProps) {
               </p>
             </div>
 
-            <div className="rounded-card border border-white/15 bg-white/5 p-6">
+            <div className="rounded-none border border-white/15 bg-white/5 p-6">
               <PrinterVisual
                 seed={printer.slug}
                 label={printer.name}
@@ -140,9 +140,9 @@ export default async function PrinterPage({ params }: PageProps) {
               {printer.highlights.map((highlight) => (
                 <li
                   key={highlight}
-                  className="flex items-start gap-3 rounded-xl border border-ink-200 bg-white p-4 text-sm text-ink-700"
+                  className="flex items-start gap-3 rounded-none border border-ink-200 bg-white p-4 text-sm text-ink-700"
                 >
-                  <CheckIcon className="mt-0.5 size-4 shrink-0 text-uv-600" />
+                  <CheckIcon className="mt-0.5 size-4 shrink-0 text-brand-600" />
                   {highlight}
                 </li>
               ))}
@@ -155,7 +155,7 @@ export default async function PrinterPage({ params }: PageProps) {
               {printer.useCases.map((useCase) => (
                 <li
                   key={useCase}
-                  className="rounded-full border border-ink-200 bg-white px-4 py-2 text-sm text-ink-700"
+                  className="rounded-none border border-ink-200 bg-white px-4 py-2 text-sm text-ink-700"
                 >
                   {useCase}
                 </li>
@@ -164,7 +164,7 @@ export default async function PrinterPage({ params }: PageProps) {
           </div>
 
           <aside className="lg:sticky lg:top-28 lg:self-start">
-            <div className="rounded-card border border-ink-200 bg-white p-6">
+            <div className="rounded-none border border-ink-200 bg-white p-6">
               <h2 className="text-lg font-semibold text-ink-900">
                 Caractéristiques techniques
               </h2>
@@ -178,8 +178,8 @@ export default async function PrinterPage({ params }: PageProps) {
               </dl>
             </div>
 
-            <div className="mt-6 rounded-card bg-ink-950 p-6 text-white">
-              <h2 className="text-lg font-semibold">Combien ça coûte ?</h2>
+            <div className="mt-6 rounded-none bg-ink-950 p-6 text-white">
+              <h2 className="font-display text-lg font-semibold text-white">Combien ça coûte ?</h2>
               <p className="mt-3 text-sm leading-relaxed text-ink-300">
                 Le prix dépend de la configuration : hauteur d&apos;impression, jeu
                 d&apos;encres, options logicielles, formation et financement. Nous
@@ -209,7 +209,7 @@ export default async function PrinterPage({ params }: PageProps) {
               </div>
               <Link
                 href="/boutique"
-                className="text-sm font-semibold text-ink-900 transition hover:text-uv-600"
+                className="text-sm font-semibold text-ink-900 transition hover:text-brand-600"
               >
                 Tout le catalogue →
               </Link>

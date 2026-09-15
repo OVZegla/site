@@ -9,7 +9,7 @@ export function Logo({ variant = "dark" }: { variant?: "dark" | "light" }) {
       aria-label="SYMP'S — retour à l'accueil"
     >
       <span
-        className="grid size-9 place-items-center rounded-lg bg-uv-600 text-white shadow-sm transition-transform group-hover:scale-105"
+        className="grid size-9 place-items-center rounded-none bg-brand-600 text-white transition-transform group-hover:scale-105"
         aria-hidden="true"
       >
         <svg viewBox="0 0 24 24" className="size-5" fill="none" strokeWidth="2">

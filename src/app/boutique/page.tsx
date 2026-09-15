@@ -43,15 +43,15 @@ export default function ShopPage() {
 
           <ul className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm text-ink-600">
             <li className="flex items-center gap-2">
-              <TruckIcon className="size-4.5 text-uv-600" />
+              <TruckIcon className="size-4.5 text-brand-600" />
               Livraison offerte dès {formatPriceShort(FREE_SHIPPING_THRESHOLD)} TTC
             </li>
             <li className="flex items-center gap-2">
-              <LockIcon className="size-4.5 text-uv-600" />
+              <LockIcon className="size-4.5 text-brand-600" />
               Paiement sécurisé par Stripe
             </li>
             <li className="flex items-center gap-2">
-              <ArrowRightIcon className="size-4.5 text-uv-600" />
+              <ArrowRightIcon className="size-4.5 text-brand-600" />
               Retour sous 14 jours
             </li>
           </ul>
@@ -67,9 +67,9 @@ export default function ShopPage() {
               <Link
                 key={category.slug}
                 href={`/boutique/${category.slug}`}
-                className="group rounded-card border border-ink-200 bg-white p-6 transition hover:border-uv-400 hover:shadow-lg hover:shadow-ink-900/5"
+                className="group rounded-none border border-ink-200 bg-white p-6 transition hover:border-brand-400 hover:shadow-lg hover:shadow-ink-900/5"
               >
-                <span className="grid size-11 place-items-center rounded-xl bg-uv-50 text-uv-600">
+                <span className="grid size-11 place-items-center rounded-none bg-brand-50 text-brand-600">
                   <Icon className="size-5.5" />
                 </span>
                 <h2 className="mt-4 text-lg font-semibold text-ink-900">
@@ -101,7 +101,7 @@ export default function ShopPage() {
               </div>
               <Link
                 href={`/boutique/${category.slug}`}
-                className="text-sm font-semibold text-ink-900 transition hover:text-uv-600"
+                className="text-sm font-semibold text-ink-900 transition hover:text-brand-600"
               >
                 Voir la catégorie →
               </Link>
@@ -116,7 +116,7 @@ export default function ShopPage() {
       })}
 
       <section className="container-page pb-20">
-        <div className="rounded-card border border-ink-200 bg-white p-8 text-center lg:p-12">
+        <div className="rounded-none border border-ink-200 bg-white p-8 text-center lg:p-12">
           <h2 className="text-2xl font-semibold tracking-tight text-ink-900">
             Vous cherchez une machine, pas un consommable ?
           </h2>
@@ -127,13 +127,13 @@ export default function ShopPage() {
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Link
               href="/imprimantes"
-              className="rounded-full border border-ink-300 bg-white px-5 py-2.5 text-sm font-semibold text-ink-900 transition hover:bg-ink-50"
+              className="rounded-none border border-ink-300 bg-white px-5 py-2.5 text-sm font-semibold text-ink-900 transition hover:bg-ink-50"
             >
               Voir la gamme
             </Link>
             <Link
               href="/devis"
-              className="rounded-full bg-ink-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-uv-600"
+              className="rounded-none bg-ink-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600"
             >
               Demander un devis
             </Link>

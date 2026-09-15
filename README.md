@@ -96,15 +96,26 @@ les pages, le sitemap et les données structurées sont générés à partir de 
 Seuils commerciaux (franco de port, forfait de livraison, TVA) :
 `src/lib/site.ts`.
 
+## Charte, contenu et animations
+
+Ils viennent de l'export du thème Shopify **Harmony** de la preview, rangé dans
+`reference/`. Couleurs, polices, angles vifs, textes de la page d'accueil, FAQ,
+gamme et animations y sont documentés ligne à ligne : voir
+[`reference/README.md`](reference/README.md).
+
 ## Visuels produits
 
 Les fiches utilisent des compositions SVG générées (`src/components/visuals.tsx`),
-déterministes à partir du slug. Pour passer aux photos réelles, remplacer ces
-composants par `next/image` : aucune autre partie du site n'a besoin de changer.
+déterministes à partir du slug. **L'export de thème ne contient aucune image** :
+elles sont sur le CDN Shopify et restent à récupérer. Pour passer aux photos
+réelles, remplacer ces composants par `next/image` : aucune autre partie du site
+n'a besoin de changer.
 
 ## Avant la mise en ligne
 
-- [ ] Remplacer les coordonnées de `src/lib/site.ts` (adresse, téléphone, e-mail).
+- [ ] Renseigner le numéro de téléphone dans `src/lib/site.ts` (l'adresse et les
+      réseaux sociaux viennent du thème, le téléphone est encore fictif).
+- [ ] Remplacer le catalogue boutique par l'export CSV des produits Shopify.
 - [ ] Compléter les mentions légales et les CGV — la trame actuelle doit être
       relue par un conseil juridique.
 - [ ] Renseigner `STRIPE_SECRET_KEY` et vérifier une commande de bout en bout.

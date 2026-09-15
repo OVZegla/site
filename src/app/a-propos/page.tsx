@@ -79,12 +79,12 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="rounded-card border border-ink-200 bg-white p-7">
+          <div className="rounded-none border border-ink-200 bg-white p-7">
             <h2 className="text-lg font-semibold text-ink-900">Notre parcours</h2>
             <ol className="mt-6 space-y-5">
               {milestones.map((milestone) => (
                 <li key={milestone.year} className="flex gap-4">
-                  <span className="w-12 shrink-0 text-sm font-bold text-uv-600">
+                  <span className="w-12 shrink-0 text-sm font-bold text-brand-600">
                     {milestone.year}
                   </span>
                   <span className="text-sm leading-relaxed text-ink-700">
@@ -103,7 +103,7 @@ export default function AboutPage() {
           <div className="mt-10 grid gap-8 sm:grid-cols-3">
             {values.map((value, index) => (
               <div key={value.title}>
-                <span className="text-sm font-bold text-uv-600">
+                <span className="text-sm font-bold text-brand-600">
                   0{index + 1}
                 </span>
                 <h3 className="mt-3 text-lg font-semibold text-ink-900">{value.title}</h3>
@@ -117,7 +117,7 @@ export default function AboutPage() {
       </section>
 
       <section className="container-page py-16 lg:py-20">
-        <div className="rounded-card border border-ink-200 bg-white p-8 text-center lg:p-12">
+        <div className="rounded-none border border-ink-200 bg-white p-8 text-center lg:p-12">
           <h2 className="text-balance text-2xl font-semibold tracking-tight text-ink-900 sm:text-3xl">
             Venez voir les machines tourner
           </h2>

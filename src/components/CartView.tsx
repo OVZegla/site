@@ -55,8 +55,8 @@ export function CartView() {
 
   if (lines.length === 0) {
     return (
-      <div className="mt-10 rounded-card border border-ink-200 bg-white p-10 text-center">
-        <span className="mx-auto grid size-14 place-items-center rounded-2xl bg-ink-100 text-ink-500">
+      <div className="mt-10 rounded-none border border-ink-200 bg-white p-10 text-center">
+        <span className="mx-auto grid size-14 place-items-center rounded-none bg-ink-100 text-ink-500">
           <CartIcon className="size-7" />
         </span>
         <h2 className="mt-5 text-xl font-semibold text-ink-900">
@@ -69,13 +69,13 @@ export function CartView() {
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <Link
             href="/boutique"
-            className="rounded-full bg-ink-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-uv-600"
+            className="rounded-none bg-ink-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600"
           >
             Voir la boutique
           </Link>
           <Link
             href="/devis"
-            className="rounded-full border border-ink-300 bg-white px-5 py-2.5 text-sm font-semibold text-ink-900 transition hover:bg-ink-50"
+            className="rounded-none border border-ink-300 bg-white px-5 py-2.5 text-sm font-semibold text-ink-900 transition hover:bg-ink-50"
           >
             Demander un devis machine
           </Link>
@@ -92,12 +92,12 @@ export function CartView() {
   return (
     <div className="mt-10 grid gap-8 lg:grid-cols-[1.6fr_1fr] lg:gap-12">
       <div>
-        <ul className="divide-y divide-ink-200 rounded-card border border-ink-200 bg-white">
+        <ul className="divide-y divide-ink-200 rounded-none border border-ink-200 bg-white">
           {lines.map((line) => (
             <li key={line.key} className="flex gap-4 p-4 sm:gap-5 sm:p-5">
               <Link
                 href={`/boutique/${line.product.category}/${line.product.slug}`}
-                className="size-20 shrink-0 overflow-hidden rounded-xl bg-ink-100 sm:size-24"
+                className="size-20 shrink-0 overflow-hidden rounded-none bg-ink-100 sm:size-24"
               >
                 <ProductVisual
                   seed={line.product.slug}
@@ -112,7 +112,7 @@ export function CartView() {
                     <h2 className="truncate text-sm font-semibold text-ink-900 sm:text-base">
                       <Link
                         href={`/boutique/${line.product.category}/${line.product.slug}`}
-                        className="hover:text-uv-700"
+                        className="hover:text-brand-700"
                       >
                         {line.product.name}
                       </Link>
@@ -127,7 +127,7 @@ export function CartView() {
                   <button
                     type="button"
                     onClick={() => remove(line.key)}
-                    className="shrink-0 rounded-lg p-2 text-ink-400 transition hover:bg-ink-100 hover:text-ink-900"
+                    className="shrink-0 rounded-none p-2 text-ink-400 transition hover:bg-ink-100 hover:text-ink-900"
                   >
                     <TrashIcon className="size-4.5" />
                     <span className="sr-only">Retirer {line.product.name} du panier</span>
@@ -135,11 +135,11 @@ export function CartView() {
                 </div>
 
                 <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-3">
-                  <div className="flex items-center rounded-full border border-ink-200">
+                  <div className="flex items-center rounded-none border border-ink-200">
                     <button
                       type="button"
                       onClick={() => setQuantity(line.key, line.quantity - 1)}
-                      className="size-9 rounded-l-full text-ink-700 transition hover:bg-ink-100"
+                      className="size-9 rounded-none text-ink-700 transition hover:bg-ink-100"
                     >
                       −<span className="sr-only">Diminuer la quantité</span>
                     </button>
@@ -149,7 +149,7 @@ export function CartView() {
                     <button
                       type="button"
                       onClick={() => setQuantity(line.key, line.quantity + 1)}
-                      className="size-9 rounded-r-full text-ink-700 transition hover:bg-ink-100"
+                      className="size-9 rounded-none text-ink-700 transition hover:bg-ink-100"
                     >
                       +<span className="sr-only">Augmenter la quantité</span>
                     </button>
@@ -170,14 +170,14 @@ export function CartView() {
 
         <Link
           href="/boutique"
-          className="mt-6 inline-block text-sm font-semibold text-ink-900 transition hover:text-uv-600"
+          className="mt-6 inline-block text-sm font-semibold text-ink-900 transition hover:text-brand-600"
         >
           ← Continuer mes achats
         </Link>
       </div>
 
       <aside className="lg:sticky lg:top-28 lg:self-start">
-        <div className="rounded-card border border-ink-200 bg-white p-6">
+        <div className="rounded-none border border-ink-200 bg-white p-6">
           <h2 className="text-lg font-semibold text-ink-900">Récapitulatif</h2>
 
           <dl className="mt-5 space-y-3 text-sm">
@@ -204,8 +204,8 @@ export function CartView() {
           </dl>
 
           {totals.remainingForFreeShipping > 0 ? (
-            <div className="mt-5 rounded-xl bg-uv-50 p-4">
-              <p className="flex items-start gap-2 text-xs leading-relaxed text-uv-700">
+            <div className="mt-5 rounded-none bg-brand-50 p-4">
+              <p className="flex items-start gap-2 text-xs leading-relaxed text-brand-700">
                 <TruckIcon className="mt-0.5 size-4 shrink-0" />
                 <span>
                   Plus que{" "}
@@ -216,7 +216,7 @@ export function CartView() {
                 </span>
               </p>
               <div
-                className="mt-3 h-1.5 overflow-hidden rounded-full bg-uv-100"
+                className="mt-3 h-1.5 overflow-hidden rounded-none bg-brand-100"
                 role="progressbar"
                 aria-valuenow={freeShippingProgress}
                 aria-valuemin={0}
@@ -224,13 +224,13 @@ export function CartView() {
                 aria-label="Progression vers la livraison offerte"
               >
                 <div
-                  className="h-full rounded-full bg-uv-500 transition-all"
+                  className="h-full rounded-none bg-brand-500 transition-all"
                   style={{ width: `${freeShippingProgress}%` }}
                 />
               </div>
             </div>
           ) : (
-            <p className="mt-5 flex items-center gap-2 rounded-xl bg-emerald-50 p-4 text-xs font-medium text-emerald-700">
+            <p className="mt-5 flex items-center gap-2 rounded-none bg-emerald-50 p-4 text-xs font-medium text-emerald-700">
               <TruckIcon className="size-4 shrink-0" />
               Livraison offerte — commande supérieure à{" "}
               {formatPriceShort(FREE_SHIPPING_THRESHOLD)}.
@@ -241,7 +241,7 @@ export function CartView() {
             type="button"
             onClick={handleCheckout}
             disabled={pending}
-            className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-ink-900 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-uv-600 disabled:cursor-not-allowed disabled:opacity-60"
+            className="mt-6 flex w-full items-center justify-center gap-2 rounded-none bg-ink-900 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-60"
           >
             <LockIcon className="size-4.5" />
             {pending ? "Redirection…" : "Passer au paiement"}
@@ -250,7 +250,7 @@ export function CartView() {
           {error && (
             <p
               role="alert"
-              className="mt-4 rounded-xl bg-red-50 p-4 text-sm leading-relaxed text-red-700"
+              className="mt-4 rounded-none bg-red-50 p-4 text-sm leading-relaxed text-red-700"
             >
               {error}
             </p>

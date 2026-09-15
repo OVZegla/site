@@ -23,13 +23,13 @@ function CartBadge() {
   return (
     <Link
       href="/panier"
-      className="relative inline-flex items-center gap-2 rounded-full border border-ink-200 bg-white px-3.5 py-2 text-sm font-medium text-ink-800 transition hover:border-ink-300 hover:bg-ink-50"
+      className="relative inline-flex items-center gap-2 rounded-none border border-ink-200 bg-white px-3.5 py-2 text-sm font-medium text-ink-800 transition hover:border-ink-300 hover:bg-ink-50"
     >
       <CartIcon className="size-4.5" />
       <span className="hidden sm:inline">Panier</span>
       {count > 0 && (
         <span
-          className="absolute -right-1.5 -top-1.5 grid size-5 place-items-center rounded-full bg-uv-600 text-[0.6875rem] font-bold text-white"
+          className="absolute -right-1.5 -top-1.5 grid size-5 place-items-center rounded-none bg-brand-600 text-[0.6875rem] font-bold text-white"
           aria-hidden="true"
         >
           {count > 99 ? "99+" : count}
@@ -58,8 +58,8 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-ink-200/80 bg-ink-50/85 backdrop-blur-md">
-      <div className="hidden bg-ink-950 py-2 text-xs text-ink-300 md:block">
+    <header className="sticky top-0 z-50 border-b border-ink-200/80 bg-white/90 backdrop-blur-md">
+      <div className="hidden bg-brand-600 py-2 text-xs text-brand-100 md:block">
         <div className="container-page flex items-center justify-between">
           <p>
             Pièces détachées et encres en stock —{" "}
@@ -69,7 +69,7 @@ export function Header() {
             <a href={`tel:${siteConfig.phoneHref}`} className="hover:text-white">
               {siteConfig.phone}
             </a>
-            <span aria-hidden="true" className="text-ink-600">
+            <span aria-hidden="true" className="text-brand-400">
               |
             </span>
             <a href={`mailto:${siteConfig.email}`} className="hover:text-white">
@@ -92,7 +92,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className={`rounded-lg px-3.5 py-2 text-sm font-medium transition ${
+                    className={`rounded-none px-3.5 py-2 text-sm font-medium transition ${
                       active
                         ? "bg-ink-100 text-ink-900"
                         : "text-ink-600 hover:bg-ink-100/70 hover:text-ink-900"
@@ -110,7 +110,7 @@ export function Header() {
           <CartBadge />
           <Link
             href="/devis"
-            className="hidden rounded-full bg-ink-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-uv-600 sm:inline-flex"
+            className="btn-type hidden border border-brand-600 bg-brand-600 px-5 py-2.5 text-xs text-white transition hover:bg-brand-800 hover:border-brand-800 sm:inline-flex"
           >
             Demander un devis
           </Link>
@@ -119,7 +119,7 @@ export function Header() {
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
             aria-controls="menu-mobile"
-            className="inline-flex size-10 items-center justify-center rounded-lg border border-ink-200 bg-white text-ink-800 lg:hidden"
+            className="inline-flex size-10 items-center justify-center rounded-none border border-ink-200 bg-white text-ink-800 lg:hidden"
           >
             {open ? <CloseIcon className="size-5" /> : <MenuIcon className="size-5" />}
             <span className="sr-only">
@@ -139,7 +139,7 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="inline-flex size-10 items-center justify-center rounded-lg border border-ink-200 bg-white text-ink-800"
+                className="inline-flex size-10 items-center justify-center rounded-none border border-ink-200 bg-white text-ink-800"
               >
                 <CloseIcon className="size-5" />
                 <span className="sr-only">Fermer le menu</span>
@@ -149,14 +149,14 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-xl px-4 py-3.5 text-lg font-medium text-ink-900 transition hover:bg-white"
+                className="rounded-none px-4 py-3.5 text-lg font-medium text-ink-900 transition hover:bg-white"
               >
                 {item.label}
               </Link>
             ))}
             <Link
               href="/devis"
-              className="mt-4 rounded-full bg-ink-900 px-5 py-3.5 text-center text-base font-semibold text-white"
+              className="btn-type mt-4 border border-brand-600 bg-brand-600 px-5 py-3.5 text-center text-sm text-white"
             >
               Demander un devis
             </Link>

@@ -1,15 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Figtree, Jost } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CartProvider } from "@/lib/cart";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({
+// Polices du thème Harmony : type_header_font jost_n6, type_body_font figtree_n4.
+const figtree = Figtree({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-figtree",
+});
+
+const jost = Jost({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+  variable: "--font-jost",
 });
 
 export const metadata: Metadata = {
@@ -51,7 +59,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0c",
+  themeColor: "#00287e",
   width: "device-width",
   initialScale: 1,
 };
@@ -78,7 +86,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={inter.variable}>
+    <html lang="fr" className={`${figtree.variable} ${jost.variable}`}>
       <body className="flex min-h-dvh flex-col font-sans antialiased">
         <script
           type="application/ld+json"
@@ -86,7 +94,7 @@ export default function RootLayout({
         />
         <a
           href="#contenu"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-ink-900 focus:px-4 focus:py-2 focus:text-sm focus:text-white"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-none focus:bg-ink-900 focus:px-4 focus:py-2 focus:text-sm focus:text-white"
         >
           Aller au contenu principal
         </a>

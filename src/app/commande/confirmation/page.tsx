@@ -15,7 +15,7 @@ export default function OrderConfirmationPage() {
     <div className="container-page py-20 lg:py-28">
       <ClearCartOnMount />
       <div className="mx-auto max-w-xl text-center">
-        <span className="mx-auto grid size-16 place-items-center rounded-2xl bg-emerald-50 text-emerald-600">
+        <span className="mx-auto grid size-16 place-items-center rounded-none bg-emerald-50 text-emerald-600">
           <CheckIcon className="size-8" />
         </span>
         <h1 className="mt-6 text-balance text-3xl font-semibold tracking-tight text-ink-900 sm:text-4xl">
@@ -30,13 +30,13 @@ export default function OrderConfirmationPage() {
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <Link
             href="/boutique"
-            className="rounded-full bg-ink-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-uv-600"
+            className="rounded-none bg-ink-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600"
           >
             Retour à la boutique
           </Link>
           <Link
             href="/contact"
-            className="rounded-full border border-ink-300 bg-white px-5 py-2.5 text-sm font-semibold text-ink-900 transition hover:bg-ink-50"
+            className="rounded-none border border-ink-300 bg-white px-5 py-2.5 text-sm font-semibold text-ink-900 transition hover:bg-ink-50"
           >
             Nous contacter
           </Link>
@@ -46,7 +46,7 @@ export default function OrderConfirmationPage() {
           Une question sur votre commande ?{" "}
           <a
             href={`tel:${siteConfig.phoneHref}`}
-            className="font-semibold text-ink-900 hover:text-uv-600"
+            className="font-semibold text-ink-900 hover:text-brand-600"
           >
             {siteConfig.phone}
           </a>

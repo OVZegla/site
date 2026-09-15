@@ -30,7 +30,7 @@ const timelines = [
 ];
 
 const fieldClass =
-  "mt-1.5 w-full rounded-xl border border-ink-200 bg-white px-4 py-3 text-sm text-ink-900 transition placeholder:text-ink-400 focus:border-uv-500 focus:outline-none focus:ring-2 focus:ring-uv-500/20";
+  "mt-1.5 w-full rounded-none border border-ink-200 bg-white px-4 py-3 text-sm text-ink-900 transition placeholder:text-ink-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20";
 
 export function QuoteForm() {
   const searchParams = useSearchParams();
@@ -90,8 +90,8 @@ export function QuoteForm() {
 
   if (status === "sent") {
     return (
-      <div className="rounded-card border border-emerald-200 bg-emerald-50 p-8 text-center lg:p-10">
-        <span className="mx-auto grid size-14 place-items-center rounded-2xl bg-emerald-100 text-emerald-700">
+      <div className="rounded-none border border-emerald-200 bg-emerald-50 p-8 text-center lg:p-10">
+        <span className="mx-auto grid size-14 place-items-center rounded-none bg-emerald-100 text-emerald-700">
           <CheckIcon className="size-7" />
         </span>
         <h2 className="mt-5 text-2xl font-semibold tracking-tight text-emerald-900">
@@ -107,7 +107,7 @@ export function QuoteForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="rounded-card border border-ink-200 bg-white p-6 lg:p-8">
+    <form onSubmit={handleSubmit} noValidate className="rounded-none border border-ink-200 bg-white p-6 lg:p-8">
       {/* Honeypot anti-spam, invisible pour les humains. */}
       <div aria-hidden="true" className="absolute left-[-9999px]">
         <label htmlFor="website">Ne pas remplir</label>
@@ -121,7 +121,7 @@ export function QuoteForm() {
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <div>
             <label htmlFor="name" className="text-sm font-medium text-ink-800">
-              Nom et prénom <span className="text-uv-600">*</span>
+              Nom et prénom <span className="text-brand-600">*</span>
             </label>
             <input
               id="name"
@@ -157,7 +157,7 @@ export function QuoteForm() {
 
           <div>
             <label htmlFor="email" className="text-sm font-medium text-ink-800">
-              E-mail <span className="text-uv-600">*</span>
+              E-mail <span className="text-brand-600">*</span>
             </label>
             <input
               id="email"
@@ -179,7 +179,7 @@ export function QuoteForm() {
 
           <div>
             <label htmlFor="phone" className="text-sm font-medium text-ink-800">
-              Téléphone <span className="text-uv-600">*</span>
+              Téléphone <span className="text-brand-600">*</span>
             </label>
             <input
               id="phone"
@@ -289,12 +289,12 @@ export function QuoteForm() {
             name="consent"
             required
             aria-invalid={Boolean(errors.consent)}
-            className="mt-0.5 size-4.5 shrink-0 rounded border-ink-300 text-uv-600 focus:ring-uv-500"
+            className="mt-0.5 size-4.5 shrink-0 rounded border-ink-300 text-brand-600 focus:ring-brand-500"
           />
           <span>
             J&apos;accepte d&apos;être recontacté au sujet de ma demande. Mes données ne
             sont utilisées que pour l&apos;établissement du devis.{" "}
-            <span className="text-uv-600">*</span>
+            <span className="text-brand-600">*</span>
           </span>
         </label>
         {errors.consent && (
@@ -305,7 +305,7 @@ export function QuoteForm() {
       {globalError && (
         <p
           role="alert"
-          className="mt-5 rounded-xl bg-red-50 p-4 text-sm leading-relaxed text-red-700"
+          className="mt-5 rounded-none bg-red-50 p-4 text-sm leading-relaxed text-red-700"
         >
           {globalError}
         </p>
@@ -314,7 +314,7 @@ export function QuoteForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="mt-7 w-full rounded-full bg-ink-900 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-uv-600 disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-7 w-full rounded-none bg-ink-900 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "sending" ? "Envoi en cours…" : "Envoyer ma demande de devis"}
       </button>

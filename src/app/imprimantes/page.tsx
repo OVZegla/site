@@ -52,8 +52,8 @@ export default function PrintersPage() {
             </p>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4 rounded-card border border-uv-200/60 bg-uv-50 p-5">
-            <FileTextIcon className="size-6 shrink-0 text-uv-600" />
+          <div className="mt-8 flex flex-wrap items-center gap-4 rounded-none border border-brand-200/60 bg-brand-50 p-5">
+            <FileTextIcon className="size-6 shrink-0 text-brand-600" />
             <p className="flex-1 text-sm leading-relaxed text-ink-700">
               <strong className="font-semibold text-ink-900">
                 Pas d&apos;achat en ligne pour les machines.

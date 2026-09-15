@@ -1,25 +1,26 @@
 export const siteConfig = {
   name: "SYMP'S",
   legalName: "SYMP'S",
-  title: "SYMP'S — Imprimantes murales et sol, encres UV et pièces détachées",
+  title: "SYMP'S — Imprimantes murales professionnelles, encres et pièces détachées",
   description:
-    "Fabricant français d'imprimantes murales et sol. Machines sur devis personnalisé, encres UV, pièces détachées et supports d'impression en stock, expédiés sous 24 h.",
+    "Imprimantes murales professionnelles à double tête Epson I1600, préparées et suivies en France. Machines sur devis avec formation et accompagnement, consommables et pièces détachées en ligne.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.symps.fr",
   locale: "fr_FR",
-  phone: "+33 1 23 45 67 89",
-  phoneHref: "+33123456789",
+  phone: "+33 3 21 00 00 00",
+  phoneHref: "+33321000000",
   email: "contact@symps.fr",
   address: {
-    street: "12 rue de l'Industrie",
-    postalCode: "44000",
-    city: "Nantes",
+    street: "10 rue des Dames",
+    postalCode: "62620",
+    city: "Ruitz",
     country: "France",
   },
   hours: "Du lundi au vendredi, 9 h – 18 h",
   socials: {
-    instagram: "https://www.instagram.com/",
-    linkedin: "https://www.linkedin.com/",
-    youtube: "https://www.youtube.com/",
+    instagram: "https://www.instagram.com/sympsfrance/",
+    linkedin: "https://fr.linkedin.com/company/symp-s-france",
+    facebook: "https://www.facebook.com/people/Symps-France/61569404995941/",
+    tiktok: "https://www.tiktok.com/@symps.fr",
   },
 } as const;
 

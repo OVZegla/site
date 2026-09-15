@@ -69,16 +69,16 @@ export default function ContactPage() {
       <section className="container-page py-14 lg:py-20">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
           <div>
-            <div className="rounded-card bg-ink-950 p-7 text-white">
-              <HeadsetIcon className="size-7 text-uv-400" />
-              <h2 className="mt-5 text-xl font-semibold">Coordonnées</h2>
+            <div className="rounded-none bg-ink-950 p-7 text-white">
+              <HeadsetIcon className="size-7 text-brand-400" />
+              <h2 className="mt-5 font-display text-xl font-semibold text-white">Coordonnées</h2>
               <dl className="mt-6 space-y-5 text-sm">
                 <div>
                   <dt className="text-ink-400">Téléphone</dt>
                   <dd className="mt-1">
                     <a
                       href={`tel:${siteConfig.phoneHref}`}
-                      className="text-lg font-semibold transition hover:text-uv-400"
+                      className="text-lg font-semibold transition hover:text-brand-400"
                     >
                       {siteConfig.phone}
                     </a>
@@ -89,7 +89,7 @@ export default function ContactPage() {
                   <dd className="mt-1">
                     <a
                       href={`mailto:${siteConfig.email}`}
-                      className="font-medium transition hover:text-uv-400"
+                      className="font-medium transition hover:text-brand-400"
                     >
                       {siteConfig.email}
                     </a>
@@ -131,9 +131,9 @@ export default function ContactPage() {
               {routes.map((route) => (
                 <article
                   key={route.title}
-                  className="flex flex-wrap items-start gap-5 rounded-card border border-ink-200 bg-white p-6"
+                  className="flex flex-wrap items-start gap-5 rounded-none border border-ink-200 bg-white p-6"
                 >
-                  <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-uv-50 text-uv-600">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-none bg-brand-50 text-brand-600">
                     <route.icon className="size-5.5" />
                   </span>
                   <div className="min-w-0 flex-1">
@@ -146,7 +146,7 @@ export default function ContactPage() {
                   </div>
                   <Link
                     href={route.href}
-                    className="rounded-full border border-ink-300 px-4 py-2 text-sm font-semibold text-ink-900 transition hover:bg-ink-50"
+                    className="rounded-none border border-ink-300 px-4 py-2 text-sm font-semibold text-ink-900 transition hover:bg-ink-50"
                   >
                     {route.cta}
                   </Link>

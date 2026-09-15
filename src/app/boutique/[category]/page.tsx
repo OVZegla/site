@@ -58,7 +58,7 @@ export default async function CategoryPage({ params }: PageProps) {
           />
 
           <div className="mt-8 flex flex-wrap items-start gap-6">
-            <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-uv-50 text-uv-600">
+            <span className="grid size-14 shrink-0 place-items-center rounded-none bg-brand-50 text-brand-600">
               <Icon className="size-7" />
             </span>
             <div className="max-w-2xl">
@@ -81,7 +81,7 @@ export default async function CategoryPage({ params }: PageProps) {
                     <Link
                       href={`/boutique/${item.slug}`}
                       aria-current={active ? "page" : undefined}
-                      className={`inline-block rounded-full px-4 py-2 text-sm font-medium transition ${
+                      className={`inline-block rounded-none px-4 py-2 text-sm font-medium transition ${
                         active
                           ? "bg-ink-900 text-white"
                           : "border border-ink-200 bg-white text-ink-700 hover:border-ink-400"

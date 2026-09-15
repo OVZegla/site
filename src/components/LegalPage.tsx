@@ -51,7 +51,7 @@ export function LegalPage({
                     >
                       <span
                         aria-hidden="true"
-                        className="mt-2.5 size-1.5 shrink-0 rounded-full bg-uv-500"
+                        className="mt-2.5 size-1.5 shrink-0 rounded-none bg-brand-500"
                       />
                       {item}
                     </li>
@@ -62,7 +62,7 @@ export function LegalPage({
           ))}
         </div>
 
-        <p className="mt-12 rounded-card border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+        <p className="mt-12 rounded-none border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
           <strong className="font-semibold">Contenu à valider.</strong> Ce texte est une
           trame de travail : faites-la relire et compléter par votre conseil juridique
           avant la mise en ligne, en particulier les mentions d&apos;immatriculation, les

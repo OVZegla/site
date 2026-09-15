@@ -10,7 +10,7 @@ export function ProductCard({ product }: { product: ShopProduct }) {
   const hasVariants = Boolean(product.variants?.length);
 
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-card border border-ink-200 bg-white transition hover:border-ink-300 hover:shadow-lg hover:shadow-ink-900/5">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-none border border-ink-200 bg-white transition hover:border-ink-300 hover:shadow-lg hover:shadow-ink-900/5">
       <Link
         href={`/boutique/${product.category}/${product.slug}`}
         className="relative block aspect-[4/3] overflow-hidden bg-ink-100"
@@ -23,7 +23,7 @@ export function ProductCard({ product }: { product: ShopProduct }) {
           className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         {product.compareAtPrice && (
-          <span className="absolute left-3 top-3 rounded-full bg-white px-2.5 py-1 text-xs font-bold text-uv-700">
+          <span className="absolute left-3 top-3 rounded-none bg-white px-2.5 py-1 text-xs font-bold text-brand-700">
             Promo
           </span>
         )}
@@ -58,7 +58,7 @@ export function ProductCard({ product }: { product: ShopProduct }) {
             {formatPrice(product.price)}
           </span>
           {product.compareAtPrice && (
-            <span className="text-sm text-ink-400 line-through">
+            <span className="text-sm text-ink-500 line-through">
               {formatPrice(product.compareAtPrice)}
             </span>
           )}

@@ -5,7 +5,7 @@ import type { Printer } from "@/lib/types";
 
 export function PrinterCard({ printer }: { printer: Printer }) {
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-card border border-ink-200 bg-white transition hover:border-ink-300 hover:shadow-xl hover:shadow-ink-900/5">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-none border border-ink-200 bg-white transition hover:border-ink-300 hover:shadow-xl hover:shadow-ink-900/5">
       <div
         className={`relative aspect-[4/3] overflow-hidden bg-gradient-to-br ${printer.accent}`}
       >
@@ -15,7 +15,7 @@ export function PrinterCard({ printer }: { printer: Printer }) {
           className="size-full transition-transform duration-500 group-hover:scale-[1.04]"
         />
         {printer.badge && (
-          <span className="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-ink-900">
+          <span className="absolute left-4 top-4 rounded-none bg-white/95 px-3 py-1 text-xs font-bold text-ink-900">
             {printer.badge}
           </span>
         )}
@@ -40,7 +40,7 @@ export function PrinterCard({ printer }: { printer: Printer }) {
             <li key={highlight} className="flex items-start gap-2">
               <span
                 aria-hidden="true"
-                className="mt-1.5 size-1.5 shrink-0 rounded-full bg-uv-500"
+                className="mt-1.5 size-1.5 shrink-0 rounded-none bg-brand-500"
               />
               {highlight}
             </li>
@@ -48,7 +48,7 @@ export function PrinterCard({ printer }: { printer: Printer }) {
         </ul>
 
         <div className="mt-auto flex items-center gap-2 pt-6 text-sm font-semibold text-ink-900">
-          <FileTextIcon className="size-4 text-uv-600" />
+          <FileTextIcon className="size-4 text-brand-600" />
           Sur devis personnalisé
           <ArrowRightIcon className="ml-auto size-4 text-ink-400 transition-transform group-hover:translate-x-1" />
         </div>

@@ -68,7 +68,7 @@ export default function QuotePage() {
             <ol className="mt-6 space-y-6">
               {steps.map((step, index) => (
                 <li key={step.title} className="flex gap-4">
-                  <span className="grid size-8 shrink-0 place-items-center rounded-full bg-ink-900 text-sm font-bold text-white">
+                  <span className="grid size-8 shrink-0 place-items-center rounded-none bg-ink-900 text-sm font-bold text-white">
                     {index + 1}
                   </span>
                   <div>
@@ -87,21 +87,21 @@ export default function QuotePage() {
             <ul className="mt-5 space-y-2.5">
               {included.map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-sm text-ink-700">
-                  <CheckIcon className="mt-0.5 size-4 shrink-0 text-uv-600" />
+                  <CheckIcon className="mt-0.5 size-4 shrink-0 text-brand-600" />
                   {item}
                 </li>
               ))}
             </ul>
 
-            <div className="mt-10 rounded-card bg-ink-950 p-6 text-white">
-              <HeadsetIcon className="size-6 text-uv-400" />
-              <h2 className="mt-4 text-lg font-semibold">Vous préférez en parler ?</h2>
+            <div className="mt-10 rounded-none bg-ink-950 p-6 text-white">
+              <HeadsetIcon className="size-6 text-brand-400" />
+              <h2 className="mt-4 font-display text-lg font-semibold text-white">Vous préférez en parler ?</h2>
               <p className="mt-2 text-sm leading-relaxed text-ink-300">
                 Un technicien répond directement, du lundi au vendredi de 9 h à 18 h.
               </p>
               <a
                 href={`tel:${siteConfig.phoneHref}`}
-                className="mt-4 inline-block text-lg font-semibold text-white transition hover:text-uv-400"
+                className="mt-4 inline-block text-lg font-semibold text-white transition hover:text-brand-400"
               >
                 {siteConfig.phone}
               </a>
@@ -110,7 +110,7 @@ export default function QuotePage() {
 
           <Suspense
             fallback={
-              <div className="rounded-card border border-ink-200 bg-white p-8 text-sm text-ink-500">
+              <div className="rounded-none border border-ink-200 bg-white p-8 text-sm text-ink-500">
                 Chargement du formulaire…
               </div>
             }

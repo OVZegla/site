@@ -90,9 +90,9 @@ export default function ServicesPage() {
           {services.map((service) => (
             <article
               key={service.title}
-              className="rounded-card border border-ink-200 bg-white p-7 lg:p-8"
+              className="rounded-none border border-ink-200 bg-white p-7 lg:p-8"
             >
-              <span className="grid size-12 place-items-center rounded-xl bg-uv-50 text-uv-600">
+              <span className="grid size-12 place-items-center rounded-none bg-brand-50 text-brand-600">
                 <service.icon className="size-6" />
               </span>
               <h2 className="mt-5 text-xl font-semibold tracking-tight text-ink-900">
@@ -106,7 +106,7 @@ export default function ServicesPage() {
                   <li key={point} className="flex items-start gap-2.5">
                     <span
                       aria-hidden="true"
-                      className="mt-1.5 size-1.5 shrink-0 rounded-full bg-uv-500"
+                      className="mt-1.5 size-1.5 shrink-0 rounded-none bg-brand-500"
                     />
                     {point}
                   </li>
@@ -138,10 +138,10 @@ export default function ServicesPage() {
       </section>
 
       <section className="container-page py-16 lg:py-20">
-        <div className="rounded-card bg-ink-950 px-8 py-12 text-white lg:px-12 lg:py-16">
+        <div className="rounded-none bg-ink-950 px-8 py-12 text-white lg:px-12 lg:py-16">
           <div className="max-w-2xl">
-            <FileTextIcon className="size-7 text-uv-400" />
-            <h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight">
+            <FileTextIcon className="size-7 text-brand-400" />
+            <h2 className="mt-5 text-balance font-display text-3xl font-semibold text-white">
               Une panne, un doute, un projet ?
             </h2>
             <p className="mt-4 text-pretty text-lg leading-relaxed text-ink-300">
@@ -154,14 +154,14 @@ export default function ServicesPage() {
               </Button>
               <a
                 href={`tel:${siteConfig.phoneHref}`}
-                className="inline-flex items-center rounded-full border border-white/20 px-6 py-3.5 text-base font-semibold transition hover:bg-white/10"
+                className="inline-flex items-center rounded-none border border-white/20 px-6 py-3.5 text-base font-semibold transition hover:bg-white/10"
               >
                 {siteConfig.phone}
               </a>
             </div>
             <p className="mt-6 text-sm text-ink-400">
               Vous cherchez plutôt une machine ?{" "}
-              <Link href="/devis" className="font-semibold text-white hover:text-uv-400">
+              <Link href="/devis" className="font-semibold text-white hover:text-brand-400">
                 Demandez un devis
               </Link>
               .

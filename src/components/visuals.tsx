@@ -15,13 +15,14 @@ function hash(value: string): number {
   return result;
 }
 
+/* Dégradés dérivés de la charte : bleu #00287E, rouge #E4000D, encre #18181A. */
 const palettes = [
-  ["#6d28d9", "#a78bfa"],
-  ["#0f172a", "#475569"],
-  ["#7c3aed", "#38bdf8"],
-  ["#1e293b", "#7c3aed"],
-  ["#312e81", "#818cf8"],
-  ["#0b1120", "#94a3b8"],
+  ["#00287e", "#4a70c4"],
+  ["#001334", "#00287e"],
+  ["#00287e", "#0b3ea1"],
+  ["#18181a", "#00287e"],
+  ["#001c4f", "#87adf5"],
+  ["#00287e", "#e4000d"],
 ];
 
 export function ProductVisual({
@@ -170,7 +171,7 @@ export function PrinterVisual({
         width="44"
         height="6"
         rx="3"
-        fill="#7c3aed"
+        fill="#e4000d"
       />
 
       {/* Base et roulettes */}

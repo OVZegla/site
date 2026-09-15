@@ -24,13 +24,13 @@ export function AddToCart({ product }: { product: ShopProduct }) {
   }
 
   return (
-    <div className="rounded-card border border-ink-200 bg-white p-6">
+    <div className="rounded-none border border-ink-200 bg-white p-6">
       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
         <span className="text-3xl font-semibold tracking-tight text-ink-900">
           {formatPrice(unitPrice)}
         </span>
         {product.compareAtPrice && (
-          <span className="text-base text-ink-400 line-through">
+          <span className="text-base text-ink-500 line-through">
             {formatPrice(product.compareAtPrice)}
           </span>
         )}
@@ -50,7 +50,7 @@ export function AddToCart({ product }: { product: ShopProduct }) {
               return (
                 <label
                   key={option.id}
-                  className={`cursor-pointer rounded-full border px-3.5 py-2 text-sm font-medium transition has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-uv-600 ${
+                  className={`cursor-pointer rounded-none border px-3.5 py-2 text-sm font-medium transition has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-brand-600 ${
                     selected
                       ? "border-ink-900 bg-ink-900 text-white"
                       : "border-ink-200 bg-white text-ink-700 hover:border-ink-400"
@@ -79,11 +79,11 @@ export function AddToCart({ product }: { product: ShopProduct }) {
       )}
 
       <div className="mt-6 flex flex-wrap items-center gap-3">
-        <div className="flex items-center rounded-full border border-ink-200">
+        <div className="flex items-center rounded-none border border-ink-200">
           <button
             type="button"
             onClick={() => setQuantity((value) => Math.max(1, value - 1))}
-            className="size-11 rounded-l-full text-lg text-ink-700 transition hover:bg-ink-100 disabled:opacity-40"
+            className="size-11 rounded-none text-lg text-ink-700 transition hover:bg-ink-100 disabled:opacity-40"
             disabled={quantity <= 1}
           >
             −<span className="sr-only">Diminuer la quantité</span>
@@ -104,7 +104,7 @@ export function AddToCart({ product }: { product: ShopProduct }) {
           <button
             type="button"
             onClick={() => setQuantity((value) => Math.min(99, value + 1))}
-            className="size-11 rounded-r-full text-lg text-ink-700 transition hover:bg-ink-100"
+            className="size-11 rounded-none text-lg text-ink-700 transition hover:bg-ink-100"
           >
             +<span className="sr-only">Augmenter la quantité</span>
           </button>
@@ -113,7 +113,7 @@ export function AddToCart({ product }: { product: ShopProduct }) {
         <button
           type="button"
           onClick={handleAdd}
-          className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-ink-900 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-uv-600"
+          className="inline-flex flex-1 items-center justify-center gap-2 rounded-none bg-ink-900 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-brand-600"
         >
           {added ? <CheckIcon className="size-5" /> : <CartIcon className="size-5" />}
           {added ? "Ajouté au panier" : "Ajouter au panier"}
@@ -127,7 +127,7 @@ export function AddToCart({ product }: { product: ShopProduct }) {
       {added && (
         <Link
           href="/panier"
-          className="mt-3 block rounded-full border border-ink-200 px-6 py-3 text-center text-sm font-semibold text-ink-900 transition hover:bg-ink-50"
+          className="mt-3 block rounded-none border border-ink-200 px-6 py-3 text-center text-sm font-semibold text-ink-900 transition hover:bg-ink-50"
         >
           Voir le panier et commander
         </Link>

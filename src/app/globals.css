@@ -1,30 +1,63 @@
 @import "tailwindcss";
 
+/**
+ * Charte reprise du thème Shopify « Harmony » de SYMP'S
+ * (config/settings_data.json de l'export du 15/09/2026).
+ *
+ *   colors_accent / heading / border / price  #00287E
+ *   colors_highlight                          #E4000D
+ *   colors_background                         #FFFFFF
+ *   colors_text                               #000000
+ *   colors_sale_price                         #c0270b
+ *   colors_keyboard_focus                     #87adf5
+ *   colors_img_background                     #18181a
+ *   type_header_font  jost_n6     type_body_font  figtree_n4
+ *   card_corner_radius 0          page_width 1300
+ */
 @theme {
-  --color-ink-950: #0a0a0c;
-  --color-ink-900: #121216;
-  --color-ink-800: #1c1c22;
-  --color-ink-700: #2a2a33;
-  --color-ink-600: #3d3d48;
-  --color-ink-500: #5a5a68;
-  --color-ink-400: #8a8a99;
-  --color-ink-300: #b8b8c4;
-  --color-ink-200: #dcdce4;
-  --color-ink-100: #eeeef2;
-  --color-ink-50: #f7f7fa;
+  /* Bleu de marque. Le 600 est la valeur exacte du thème, les autres nuances
+     en sont dérivées pour les survols, les fonds et les bordures. */
+  --color-brand-900: #001334;
+  --color-brand-800: #001c4f;
+  --color-brand-700: #002267;
+  --color-brand-600: #00287e;
+  --color-brand-500: #0b3ea1;
+  --color-brand-400: #4a70c4;
+  --color-brand-200: #b8c8e8;
+  --color-brand-100: #dde5f6;
+  --color-brand-50: #f0f4fc;
 
-  /* Violet UV — la longueur d'onde de polymérisation des encres (395 nm). */
-  --color-uv-700: #5b21b6;
-  --color-uv-600: #6d28d9;
-  --color-uv-500: #7c3aed;
-  --color-uv-400: #9b6bf5;
-  --color-uv-100: #ede9fe;
-  --color-uv-50: #f6f3ff;
+  /* Rouge d'accentuation (colors_highlight) et rouge de promotion. */
+  --color-flag-600: #e4000d;
+  --color-flag-700: #c0270b;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-    sans-serif;
+  --color-focus: #87adf5;
 
-  --radius-card: 0.875rem;
+  --color-ink-950: #000000;
+  --color-ink-900: #18181a;
+  --color-ink-800: #212326;
+  --color-ink-700: #333333;
+  --color-ink-600: #55585e;
+  --color-ink-500: #6a6e76;
+  --color-ink-400: #9c9c9c;
+  --color-ink-300: #c4c7cc;
+  --color-ink-200: #e0e2e6;
+  --color-ink-100: #eef0f3;
+  --color-ink-50: #f7f8fa;
+
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-display: var(--font-jost), var(--font-figtree), ui-sans-serif,
+    system-ui, sans-serif;
+
+  /* card_corner_radius: 0 — le thème est entièrement à angles vifs. */
+  --radius-card: 0px;
+
+  /* Durées du thème (assets/base.css). */
+  --duration-short: 100ms;
+  --duration-default: 250ms;
+  --duration-long: 500ms;
+  --duration-animate: 1000ms;
 }
 
 @layer base {
@@ -33,6 +66,30 @@
     scroll-behavior: smooth;
   }
 
+  body {
+    background-color: #ffffff;
+    color: var(--color-ink-950);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-brand-600);
+    font-weight: 600;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-600);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  /* Le thème coupe toutes les animations sous prefers-reduced-motion. */
   @media (prefers-reduced-motion: reduce) {
     :root {
       scroll-behavior: auto;
@@ -40,44 +97,92 @@
     *,
     *::before,
     *::after {
-      animation-duration: 0.01ms !important;
-      transition-duration: 0.01ms !important;
+      animation: none !important;
+      transition: none !important;
     }
-  }
-
-  body {
-    background-color: var(--color-ink-50);
-    color: var(--color-ink-900);
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
-
-  ::selection {
-    background-color: var(--color-uv-500);
-    color: white;
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--color-uv-600);
-    outline-offset: 2px;
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
   }
 }
 
+/* page_width: 1300 */
 @utility container-page {
   margin-inline: auto;
   width: 100%;
-  max-width: 80rem;
+  max-width: 81.25rem;
   padding-inline: 1.25rem;
 
   @media (min-width: 1024px) {
-    padding-inline: 2rem;
+    padding-inline: 2.5rem;
   }
 }
 
-/* Motif de fond évoquant la trame d'impression, utilisé sur les blocs sombres. */
 @utility bg-grid {
   background-image:
     linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
   background-size: 56px 56px;
+}
+
+/* Typographie des boutons : police de titre, capitales espacées, comme Harmony. */
+@utility btn-type {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------------------
+ * Révélation au défilement — port du composant <use-animate> du thème.
+ *
+ * Thème : IntersectionObserver (seuil 0) qui pose l'attribut [animate] ;
+ *   état initial  opacity 0, translate3d(0, 5rem, 0)
+ *   état révélé   opacity 1, translateZ(0)
+ *   transition    opacity + transform, --duration-long (500ms), ease
+ * ------------------------------------------------------------------------- */
+@layer components {
+  [data-reveal] {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: var(--duration-long);
+    transition-timing-function: ease;
+  }
+
+  [data-reveal="fade-up"] {
+    transform: translate3d(0, 5rem, 0);
+  }
+
+  [data-reveal="fade"] {
+    transform: none;
+  }
+
+  [data-reveal][data-animate] {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+
+  /* Images : zoom-fade du thème, 1000ms, scale 1.2 → 1. */
+  @keyframes zoom-fade {
+    0% {
+      opacity: 0;
+      transform: scale(1.2);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  [data-reveal-image] {
+    opacity: 0;
+  }
+
+  [data-reveal-image][data-animate] {
+    animation: zoom-fade var(--duration-animate) ease forwards;
+  }
 }

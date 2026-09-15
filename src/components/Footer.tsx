@@ -18,7 +18,7 @@ export function Footer() {
             <div className="mt-6 space-y-1.5 text-sm">
               <a
                 href={`tel:${siteConfig.phoneHref}`}
-                className="block text-white transition hover:text-uv-400"
+                className="block text-white transition hover:text-brand-400"
               >
                 {siteConfig.phone}
               </a>
@@ -48,7 +48,7 @@ export function Footer() {
                 </li>
               ))}
               <li>
-                <Link href="/devis" className="text-uv-400 transition hover:text-uv-300">
+                <Link href="/devis" className="text-brand-200 transition hover:text-white">
                   Demander un devis
                 </Link>
               </li>
@@ -117,7 +117,7 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-ink-800 pt-8 text-xs text-ink-500 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-4 border-t border-ink-800 pt-8 text-xs text-ink-400 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {siteConfig.legalName} — {siteConfig.address.street},{" "}
             {siteConfig.address.postalCode} {siteConfig.address.city}

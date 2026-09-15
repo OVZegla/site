@@ -12,7 +12,7 @@ import {
   getProductsByCategory,
   shopProducts,
 } from "@/lib/data/shop";
-import { getPrinter } from "@/lib/data/printers";
+import { getPrinterByName } from "@/lib/data/printers";
 import { siteConfig } from "@/lib/site";
 
 interface PageProps {
@@ -93,7 +93,7 @@ export default async function ProductPage({ params }: PageProps) {
 
         <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
-            <div className="overflow-hidden rounded-card border border-ink-200 bg-ink-100">
+            <div className="overflow-hidden rounded-none border border-ink-200 bg-ink-100">
               <ProductVisual
                 seed={product.slug}
                 label={product.name}
@@ -108,9 +108,9 @@ export default async function ProductPage({ params }: PageProps) {
               ].map((item) => (
                 <li
                   key={item.label}
-                  className="flex items-center gap-2.5 rounded-xl border border-ink-200 bg-white px-4 py-3 text-xs font-medium text-ink-700"
+                  className="flex items-center gap-2.5 rounded-none border border-ink-200 bg-white px-4 py-3 text-xs font-medium text-ink-700"
                 >
-                  <item.icon className="size-4 shrink-0 text-uv-600" />
+                  <item.icon className="size-4 shrink-0 text-brand-600" />
                   {item.label}
                 </li>
               ))}
@@ -139,21 +139,19 @@ export default async function ProductPage({ params }: PageProps) {
               </h2>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {product.compatibility.map((item) => {
-                  const printer = getPrinter(
-                    item.toLowerCase().replace(/\s+/g, "-").replace("'", ""),
-                  );
+                  const printer = getPrinterByName(item);
                   const target = printer ? `/imprimantes/${printer.slug}` : null;
                   return (
                     <li key={item}>
                       {target ? (
                         <Link
                           href={target}
-                          className="inline-block rounded-full border border-ink-200 bg-white px-3.5 py-1.5 text-sm text-ink-700 transition hover:border-uv-400 hover:text-uv-700"
+                          className="inline-block rounded-none border border-ink-200 bg-white px-3.5 py-1.5 text-sm text-ink-700 transition hover:border-brand-400 hover:text-brand-700"
                         >
                           {item}
                         </Link>
                       ) : (
-                        <span className="inline-block rounded-full border border-ink-200 bg-white px-3.5 py-1.5 text-sm text-ink-700">
+                        <span className="inline-block rounded-none border border-ink-200 bg-white px-3.5 py-1.5 text-sm text-ink-700">
                           {item}
                         </span>
                       )}
@@ -181,7 +179,7 @@ export default async function ProductPage({ params }: PageProps) {
             <h2 className="text-2xl font-semibold tracking-tight text-ink-900">
               Caractéristiques
             </h2>
-            <dl className="mt-5 divide-y divide-ink-100 rounded-card border border-ink-200 bg-white px-5 text-sm">
+            <dl className="mt-5 divide-y divide-ink-100 rounded-none border border-ink-200 bg-white px-5 text-sm">
               {product.specs.map((spec) => (
                 <div key={spec.label} className="flex gap-4 py-3.5">
                   <dt className="w-2/5 shrink-0 text-ink-500">{spec.label}</dt>
