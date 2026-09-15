@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #0a0a0c;
+  --color-ink-900: #121216;
+  --color-ink-800: #1c1c22;
+  --color-ink-700: #2a2a33;
+  --color-ink-600: #3d3d48;
+  --color-ink-500: #5a5a68;
+  --color-ink-400: #8a8a99;
+  --color-ink-300: #b8b8c4;
+  --color-ink-200: #dcdce4;
+  --color-ink-100: #eeeef2;
+  --color-ink-50: #f7f7fa;
+
+  /* Violet UV — la longueur d'onde de polymérisation des encres (395 nm). */
+  --color-uv-700: #5b21b6;
+  --color-uv-600: #6d28d9;
+  --color-uv-500: #7c3aed;
+  --color-uv-400: #9b6bf5;
+  --color-uv-100: #ede9fe;
+  --color-uv-50: #f6f3ff;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+
+  --radius-card: 0.875rem;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-ink-50);
+    color: var(--color-ink-900);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-uv-500);
+    color: white;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-uv-600);
+    outline-offset: 2px;
+  }
+}
+
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+
+  @media (min-width: 1024px) {
+    padding-inline: 2rem;
+  }
+}
+
+/* Motif de fond évoquant la trame d'impression, utilisé sur les blocs sombres. */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
